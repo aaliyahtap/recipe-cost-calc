@@ -1,6 +1,6 @@
 """
 Recipe Cost Calculator
-INT CHECKER v1 -
+INT CHECKER v2 - implementing more specific
 Aaliyah T
 
 """
@@ -21,5 +21,5 @@ def int_checker(amount_question, error_message):
     return int_num
 
 
-number = int(int_checker("enter a number: ", "error"))
-print(number)
+number = int(int_checker("Please enter an integer: ", "This is not an integer - please enter an integer"))
+print("You have chosen the number: {}".format(number))

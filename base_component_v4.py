@@ -103,6 +103,6 @@ for item in range(amount_ingredients_ques):
     total_cost_recipe_ingredients = sum(item_recipe_cost)
     print("total cost recipe: ${:.2f}".format(total_cost_recipe_ingredients))
 
-    total_cost_per_serving = total_cost_recipe_ingredients * serving_size
+    total_cost_per_serving = total_cost_recipe_ingredients / serving_size
     print("total cost per serving: ${:.2f}".format(total_cost_per_serving))
 

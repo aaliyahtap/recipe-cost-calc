@@ -1,6 +1,6 @@
 """
 Recipe Cost Calculator
-Skeleton v1
+Skeleton v2 - start to add the loops into the base
 Aaliyah T
 
 """
@@ -18,13 +18,24 @@ def string_checker(list_of_allowable):
     print("placeholder")
 
 
-def not_blank():
-    print("placeholder")
+def not_blank(question, error_message):
+    valid = False
+
+    while not valid:
+        response = input(question)
+
+        if response != "":
+            return response
+        else:
+            print(error_message)
+
+
+# main routine
 
 
 # set up lists and constants************************************
 calc_total_cost = []
-yes_no_list = [["yes", "y"], ["no", "n"]]
+
 chosen_recipe_list = []
 ingredients_list = []
 max_list_length = 10
@@ -34,6 +45,6 @@ while len(chosen_recipe_list) != max_list_length:
     # ask users for input
     print("**")
     print("** Welcome to my recipe cost calculator")
-    recipe = input("What recipe are you going to need the cost for? ")
-    chosen_recipe_list.append(recipe)
-
+    recipe_name = not_blank("What recipe are you going to need the cost for? ", "This cannot be blank")
+    chosen_recipe_list.append(recipe_name)
+    print(chosen_recipe_list)
