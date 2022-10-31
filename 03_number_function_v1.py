@@ -18,8 +18,10 @@ def number_checker(amount_question, error_message):
             x = False
 
             if int_num > 999999999999:
+                print(error_message)
                 return
             elif int_num < 0:
+                print(error_message)
                 return
 
         except:
@@ -28,5 +30,5 @@ def number_checker(amount_question, error_message):
     return int_num
 
 
-num_checker = (number_checker("Enter a number: ", "Error"))
+num_checker = (number_checker("enter a number: ", "Error"))
 print(num_checker)

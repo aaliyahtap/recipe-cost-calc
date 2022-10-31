@@ -32,17 +32,17 @@ def int_checker(amount_question, error_message):
 
     return int_num
 
-
+# function to calculate total cost to make the recipe (inactive - will not be using in later components)
 def cost_to_make():
     print("cost to make")
 
 
-# function to calculate total cost of meal
+# function to calculate total cost of meal (inactive - will not be using in later components)
 def cost_of_meal():
     print("cost of meal")
 
 
-# function to calculate cost per serving
+# function to calculate cost per serving (inactive - will not be using in later components)
 def cost_per_serving():
     print("cost per serving")
 
@@ -65,12 +65,12 @@ print("You have chosen a serving size of {}".format(count))
 serving_size_list.append(count)
 print(serving_size_list)
 
-amount_ingredients_ques = int(
-    input("how many ingredients will you need? (for example: flour, sugar, and milk would be 3): "))
+amount_ingredients_ques = int(int_checker("how many ingredients will you need? (for example: flour, sugar, and milk would be 3): ",
+                                          "error"))
 
 for item in range(amount_ingredients_ques):
     ingredients_ques = not_blank("Please input the name of the ingredients you need: ",
-                                 "Error")
+                                 "error")
     amount_grams = int(int_checker("please enter an amount for {} in grams: ".format(ingredients_ques),
                                    "sorry - this is not an integer "))
     ingredients_list.append(ingredients_ques)
