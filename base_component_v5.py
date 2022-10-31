@@ -1,6 +1,7 @@
 """
 Recipe Cost Calculator
 BASE COMPONENT V5 - refining the base component for final, adding tags to label functions
+NOT USED - INVALID CODE
 Aaliyah T
 
 """
