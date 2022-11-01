@@ -78,17 +78,6 @@ print("""
 print("")
 print("""
                 ˗ˏˋ ꒰ ♡ ꒱ ˎˊ˗""")
-# unused cat design
-# print("""
-# ／＞　 フ
-# | 　_　_|
-# ／` ミ＿xノ
-# /　　　　 |
-# /　 ヽ　　 ﾉ
-# │　　|　|　|
-# ／￣|　　 |　|　|
-#  (￣ヽ＿_ヽ_)__)
-# ＼二)""")
 
 
 recipe_name = not_blank("""
@@ -107,40 +96,43 @@ serving_size_list.append(count)
 print("♡ You have chosen a serving size of {}!".format(serving_size_list))
 
 amount_ingredients_ques = int(int_checker("♡ How many ingredients will you need? "
-                                          "♡ (for example: flour, sugar, and milk would be 3): ",
+                                          "(for example: flour, sugar, and milk would be 3): ",
                                           "♡ That isn't a correct integer!"))
 
+# this is used to ensure the question will not go out of the range input by the user
+# (user wants 2 ingredients so program will stay within 2 ingredient questions)
 for item in range(amount_ingredients_ques):
-    ingredients_ques = not_blank("Please input the name of the ingredients you need: ",
-                                 "Sorry - this can't be blank")
-    amount_grams = int(int_checker("please enter an amount for {} in grams or millilitres: ".format(ingredients_ques),
+    ingredients_ques = not_blank("♡ Please input the name of the ingredients you need: ",
+                                 "♡ Sorry - this can't be blank")
+    amount_grams = int(int_checker("♡ Please enter an amount for {} in grams or millilitres: ".format(ingredients_ques),
                                    "That isn't a correct integer"))
     cost_ingredients = float(
-        float_checker("What is the price of {} at your local store per kg? ".format(ingredients_ques),
-                      "That isn't a correct integer"))
+        float_checker("♡ What is the price of {} at your local store per kg? ".format(ingredients_ques),
+                      "♡ That isn't a correct integer"))
 
     cost = (amount_grams / item_weight_store * cost_ingredients)
-    print("The cost for {} is: ${:.2f}".format(ingredients_ques, cost), ":)")
+    print("♡ The cost for {} is: ${:.2f}".format(ingredients_ques, cost), ":)")
 
     item_cost_store.append(cost_ingredients)
     ingredients_list.append(ingredients_ques)
     amount_ingredients_list.append(amount_grams)
     item_recipe_cost.append(cost)
 
-print("ingredients: ", ingredients_list)
-print("amount ingredients: ", amount_ingredients_list)
-print("item cost per kg in store: ", item_cost_store)
-print("item in recipe cost: ".format(ingredients_ques), item_recipe_cost)
+print("♡ ingredients: ", ingredients_list)
+print("♡ amount ingredients: ", amount_ingredients_list)
+print("♡ item cost per kg in store: ", item_cost_store)
+print("♡ item in recipe cost: ".format(ingredients_ques), item_recipe_cost)
 total_cost_recipe_ingredients = sum(item_recipe_cost)
-print("total cost recipe: ${:.2f}".format(total_cost_recipe_ingredients))
+print("♡ total cost recipe: ${:.2f}".format(total_cost_recipe_ingredients))
+# this prints the total cost of the recipe times the serving size.
 total_cost_per_serving = total_cost_recipe_ingredients / serving_size
 print("♡ total cost per serving: ${:.2f}".format(total_cost_per_serving))
 
 # TOTAL COST
 print(""" 
-/)  /) ~ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-( •-• ) ~  The total cost per serving is ${:.2f}!""".format(total_cost_per_serving), """♡
-/づ  づ ~ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛""")
+/)  /) ~ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+( •-• ) ~  ♡ The total cost per serving is ${:.2f}! ♡""".format(total_cost_per_serving), """
+/づ  づ ~ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛""")
 print(" ")
 print(" ")
 print(" ")
