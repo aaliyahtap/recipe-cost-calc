@@ -1,6 +1,6 @@
 """
 Recipe Cost Calculator
-BASE COMPONENT V2 - trying to implement most of the simple components into this base component (not calculations)
+BASE COMPONENT V3 - added all functions except calculation function
 Aaliyah T
 
 """

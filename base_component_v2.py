@@ -65,7 +65,8 @@ print("You have chosen a serving size of {}".format(count))
 serving_size_list.append(count)
 print(serving_size_list)
 
-amount_ingredients_ques = int(int_checker("how many ingredients will you need? (for example: flour, sugar, and milk would be 3): ",
+amount_ingredients_ques = int(int_checker("how many ingredients will you need? "
+                                          "(for example: flour, sugar, and milk would be 3): ",
                                           "error"))
 
 for item in range(amount_ingredients_ques):
